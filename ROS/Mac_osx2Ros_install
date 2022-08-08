@@ -1,3 +1,4 @@
+
 ### 1. install miniconda
 
 conda install site: https://docs.conda.io/en/latest/miniconda.html
@@ -47,3 +48,12 @@ catkin build
 ![](2022-08-07-22-36-35.png)
 
 ![](2022-08-07-22-52-22.png)
+
+
+---
+
+[Reference]
+
+1. https://github.com/RoboStack/ros-noetic
+
+2. https://robostack.github.io/

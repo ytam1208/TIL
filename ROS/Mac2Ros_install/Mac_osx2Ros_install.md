@@ -11,9 +11,9 @@ install Python 3.n -> Miniconda3 macOS Intel x86 64-bit pkg
 ```
 conda install mamba -c conda-forge
 
-mamba create -n robostack ros-noetic-desktop python=3.9 -c robostack -c robostack-experimental -c conda-forge --no-channel-priority --override-channels
+mamba create -n robostackenv ros-noetic-desktop python=3.9 -c robostack -c robostack-experimental -c conda-forge --no-channel-priority --override-channels
 
-conda activate robostack
+conda activate robostackenv
 
 mamba install compilers cmake pkg-config make ninja
 
@@ -21,7 +21,7 @@ mamba install catkin_tools
 
 conda deactivate
 
-conda activate robostack
+conda activate robostackenv
 
 mamba install rosdep
 

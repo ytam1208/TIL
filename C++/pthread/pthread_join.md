@@ -1,6 +1,12 @@
-**pthred_create** 
+**pthred_join** 
 
 쓰레드 생성 이후에 쓰레드의 사용을 다했음을 알고, 더 이상 프로그램이 정상 종료가 될때 혹은 쓰레드의 메모리를 해제할때까지 기다리게 해주는 함수이다.
+
+그러니까 만일 join을 안쓰고 pthread_create만 하게 되면 프로그램이 실행되자마자 쓰레드가 생성되기전에 프로그램이 종료 될 수 있다.
+
+아래 예시 코드처럼 전역변수 i가 쓰레드 생성이 되기도 전에 종료되어 0이 출력된다.
+
+쓰레드가 정상 동작하며 프로그램이 기다리게 해주기 위해서는 join을 꼭 사용해야한다.
 
 ```
 int pthread_join(pthread_t th, void **thread_return);
@@ -22,11 +28,11 @@ pthread_join return 값: 성공시 0, 실패시 1을 반환한다.
 #include <stdlib.h>
 #include <unistd.h>
 
+int i = 0;
 
 void *thread1(void *data)
 {
    int id;
-   int i = 0;
    id = *((int *)data);
    while(1)
    {
@@ -48,9 +54,11 @@ int main()
    if(thread_id != 0)
       std::cout << "thread 1 create fail: " << thread_id << std::endl;
 
-   thread_id = pthread_join(p_thread[0], NULL);
+   <!-- thread_id = pthread_join(p_thread[0], NULL);
    if(thread_id != 0)
-      std::cout << "thread 1 Join fail : " << thread_id << std::endl;
+      std::cout << "thread 1 Join fail : " << thread_id << std::endl; -->
+
+   std::cout << i << std::endl;
 
    return 0;
 }

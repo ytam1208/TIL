@@ -87,3 +87,11 @@ int main()
     return 0;
 }
 ```
+
+적절한 상황에 맞는 가독성 높은 함수 포인터 배열을 사용 할 수 있다.
+
+[아래 코드 실행 결과] 
+</br>
+
+<img width="599" alt="스크린샷 2022-10-24 오후 3 16 19" src="https://user-images.githubusercontent.com/56625848/197459990-335f85bc-4cee-4b8e-808c-297ac07a8d00.png">
+

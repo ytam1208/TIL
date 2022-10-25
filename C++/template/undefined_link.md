@@ -102,6 +102,9 @@ class A
         int x = 100;
         int y = 20;
 };
+
+
+#include "C_function/templete.tpp"
 ```
 temp.tpp
 ```
